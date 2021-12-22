@@ -21,6 +21,7 @@ using System;
 using System.Diagnostics;
 using System.Runtime.InteropServices;
 using System.Text;
+using System.Windows.Forms;
 
 namespace MapAssist.Helpers
 {
@@ -36,10 +37,20 @@ namespace MapAssist.Helpers
 
         public ProcessContext(Process process)
         {
-            _process = process;
-            _handle = WindowsExternal.OpenProcess((uint)WindowsExternal.ProcessAccessFlags.VirtualMemoryRead, false, _process.Id);
-            _baseAddr = _process.MainModule.BaseAddress;
-            _moduleSize = _process.MainModule.ModuleMemorySize;
+            try
+            {
+                _process = process;
+                _handle = WindowsExternal.OpenProcess((uint)WindowsExternal.ProcessAccessFlags.VirtualMemoryRead, false, _process.Id);
+                _baseAddr = _process.MainModule.BaseAddress;
+                _moduleSize = _process.MainModule.ModuleMemorySize;
+            }
+            catch(Exception e)
+            {
+                _log.Error(e);
+                MessageBox.Show($"MapAssist could not open a handle to {process.ProcessName}, please run as administrator.", "Error opening handle", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1, MessageBoxOptions.DefaultDesktopOnly);
+                MapApi.Dispose();
+                Application.Exit();
+            }
         }
 
         public IntPtr Handle { get => _handle; }
