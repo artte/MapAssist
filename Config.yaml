@@ -2,7 +2,7 @@
 
 ## HotkeyConfiguration - Keyboard shortcuts for the overlay
 HotkeyConfiguration:
-  ToggleKey: '\'
+  ToggleKey: '''
   ZoomInKey: '+'
   ZoomOutKey: '-'
 
@@ -42,7 +42,7 @@ RenderingConfiguration:
   ## BuffPosition - Options are: Player, Top, Bottom
   BuffPosition: Bottom
   ## BuffSize - Size of the buff icons (0.8 = 80%, 1 = 100%, 1.2 = 120%)
-  BuffSize: 1
+  BuffSize: 0.8
 
 ## MapConfiguration -- Visual settings for icons, lines and labels
 MapConfiguration:
@@ -191,7 +191,7 @@ ItemLog:
 ## MapColorConfiguration - Color schema for drawing overlay map
 MapColorConfiguration:
   Walkable:
-  Border: '255, 255, 255'
+  Border: '255, 255, 255, 200'
 
 ## GameInfo - Display setting for game info
 GameInfo:

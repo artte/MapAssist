@@ -54,6 +54,7 @@ x-bases:
 # This ring rule will show all magic, rare, and unique rings
 Ring:
  - Qualities: [magic, rare, unique]
+ - Qualities: [rare, unique]
 
 ### Some items are inactive. 
 ### To activate them for the loot log, remove the ## in front of them. 
@@ -118,6 +119,7 @@ Crystal Sword:
 Phase Blade:
  - Qualities: [normal, superior]
    Sockets: [5]
+   Sockets: [5, 6]
 Greater Talons:
  - Qualities: [normal,superior]
    Sockets: [3]
@@ -267,8 +269,20 @@ Sacred Rondache:
  - *pally-shield-base
 Royal Shield:
  - *pally-shield-base
+Vortex Shield:
+ - *pally-shield-base                                 
 
 ### Runes
+Ko Rune:
+Thul Rune:
+Sol Rune:
+Tal Rune:
+Ral Rune:
+Amn Rune:
+Ort Rune:
+Fal Rune:
+Lum Rune:
+Lem Rune:
 Hel Rune:
 Pul Rune:
 Um Rune:
@@ -301,6 +315,9 @@ Perfect Topaz:
 Perfect Skull:
 
 ### Uniques
+#HoZ
+Zakarum Shield:
+ - Qualities: unique                  
 #Ribcracker
 Quarterstaff:
  - Qualities: unique
